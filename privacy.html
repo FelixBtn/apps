@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy policy · Félix Boittin</title>
-<meta name="description" content="Privacy policy: Mermaid Studio for Confluence Cloud.">
+<meta name="description" content="Privacy policy: Mermaid Studio for Confluence and Jira Cloud.">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <header class="site"><div class="wrap">
 <a class="brand" href="index.html">Félix Boittin · Atlassian apps</a>
-<nav aria-label="Main"><a href="mermaid/index.html">Documentation</a> · <a href="support.html">Support</a> · <a href="security.html">Security</a></nav>
+<nav aria-label="Main"><a href="mermaid/index.html">Confluence docs</a> · <a href="mermaid-jira/index.html">Jira docs</a> · <a href="support.html">Support</a> · <a href="security.html">Security</a></nav>
 </div></header>
 <main class="wrap">
 <h1>Privacy policy</h1>
@@ -22,21 +22,23 @@
 
 <h2>The short version</h2>
 <ul>
-  <li>The app runs entirely on Atlassian's infrastructure (Atlassian Forge) and sends no data outside Atlassian.</li>
-  <li>Your diagrams stay in your Confluence site. We, the publisher, cannot see them.</li>
-  <li>The app uses no cookies, no analytics and no tracking.</li>
+  <li>The apps run entirely on Atlassian's infrastructure (Atlassian Forge) and sends no data outside Atlassian.</li>
+  <li>Your diagrams stay in your Confluence or Jira site. We, the publisher, cannot see them.</li>
+  <li>The apps use no cookies, no analytics and no tracking.</li>
 </ul>
 
-<h2>Data processed by the app</h2>
+<h2>Data processed by the apps</h2>
 <table>
   <tr><th>Data</th><th>Where it is kept</th><th>Purpose</th></tr>
   <tr><td>Diagram code and settings</td><td>In your Confluence pages, as part of the macro</td><td>Display and edit your diagrams</td></tr>
   <tr><td>Export images of diagrams (PNG)</td><td>As attachments of the page in your Confluence site</td><td>Show diagrams in PDF and Word exports</td></tr>
+  <tr><td>Diagram code and settings (Jira)</td><td>On the Jira work item, in a work item property named <code>mermaid-studio</code></td><td>Display and edit the work item's diagrams</td></tr>
+  <tr><td>Work item descriptions (Jira)</td><td>Read in the user's browser when the panel is shown; not stored</td><td>Draw the Mermaid code blocks found in the description</td></tr>
   <tr><td>Text sent to the AI features (your description, the diagram code, a syntax error)</td><td>Processed by Atlassian-hosted models (Forge LLMs) to answer the request; not stored by the app</td><td>Generate, fix or explain a diagram when a user asks</td></tr>
   <tr><td>AI usage counters: number of AI requests and of model tokens per site and month</td><td>App storage on Atlassian's infrastructure; contains no personal data and no content</td><td>Apply monthly AI limits and monitor costs</td></tr>
   <tr><td>Technical logs: event types, token counts, error codes, timestamps</td><td>Atlassian's Forge logging; no diagram content</td><td>Detect and fix errors</td></tr>
 </table>
-<p>The app reads and changes Confluence content only as the signed-in user and only when that user acts (for example, converting code blocks or saving a diagram). It does not read user profiles, email addresses or other content.</p>
+<p>The apps read and change Confluence and Jira content only as the signed-in user. They change content only when that user acts (for example, converting code blocks or saving a diagram). It does not read user profiles, email addresses or other content.</p>
 <p>AI requests are processed by Atlassian under its own terms and privacy commitments, with the same content moderation as Atlassian's own AI features. See <a href="https://www.atlassian.com/legal/privacy-policy">Atlassian's privacy policy</a>.</p>
 
 <h2>Data we receive as the publisher</h2>
@@ -50,7 +52,7 @@
 <p>We do not sell or share data. Our service providers are Atlassian (app hosting, AI models, Marketplace, help center) and GitHub (this website). They may process data outside the European Union under their own safeguards, such as the European Commission's standard contractual clauses or the EU-US Data Privacy Framework.</p>
 
 <h2>Retention</h2>
-<p>Diagrams and export images stay in your Confluence site until you delete them. When the app is uninstalled, Atlassian deletes the app's storage (AI usage counters) after 28 days. Support requests are kept as described above.</p>
+<p>Diagrams and export images stay in your Confluence pages or Jira work items until you delete them. When an app is uninstalled, Atlassian deletes the app's storage (AI usage counters) after 28 days. Support requests are kept as described above.</p>
 
 <h2>Your rights</h2>
 <p>Under the GDPR you can ask for access to, correction of or deletion of your personal data, object to or restrict its processing, and ask for a copy in a portable format. Contact us through the <a href="https://felixb-support.atlassian.net/servicedesk/customer/portal/3">help center</a> or at contact@clivio.app. You can also complain to the French data protection authority, the <a href="https://www.cnil.fr">CNIL</a>, or to your local authority.</p>

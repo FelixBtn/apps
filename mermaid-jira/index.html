@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mermaid Studio for Jira — documentation · Félix Boittin</title>
+<meta name="description" content="Mermaid Studio for Jira — documentation: Mermaid Studio for Confluence and Jira Cloud.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">Félix Boittin · Atlassian apps</a>
+<nav aria-label="Main"><a href="../mermaid/index.html">Confluence docs</a> · <a href="../mermaid-jira/index.html">Jira docs</a> · <a href="../support.html">Support</a> · <a href="../security.html">Security</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Mermaid Studio for Jira</h1>
+<p class="lead">Mermaid diagrams on Jira work items, with the same editor and AI assistant as Mermaid Studio for Confluence. Mermaid code pasted into a description is drawn automatically.</p>
+
+<ul class="toc">
+  <li><a href="#start">Get started</a></li>
+  <li><a href="#panel">The Mermaid diagrams panel</a></li>
+  <li><a href="#description">Diagrams from the description</a></li>
+  <li><a href="#editor">Editor and AI assistant</a></li>
+  <li><a href="#permissions">Who can do what</a></li>
+  <li><a href="#limits">Limits</a></li>
+  <li><a href="#data">Where your data goes</a></li>
+  <li><a href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+
+<h2 id="start">Get started</h2>
+<ol>
+  <li>A Jira administrator installs the app from the Atlassian Marketplace.</li>
+  <li>Open a work item and click the <strong>Mermaid diagrams</strong> button under the summary (with the other app buttons).</li>
+  <li>The panel appears above the activity, and the editor opens. Write Mermaid code or describe the diagram to the AI assistant, then click <strong>Save</strong>.</li>
+</ol>
+<p>Jira administrators can show the panel on every work item: in the panel's <strong>•••</strong> menu, choose <strong>Show for all work items</strong>.</p>
+
+<h2 id="panel">The Mermaid diagrams panel</h2>
+<ul>
+  <li>Each diagram has <strong>Edit</strong> and <strong>Delete</strong> buttons. Delete asks for confirmation.</li>
+  <li><strong>Add diagram</strong> adds another diagram to the work item.</li>
+  <li>Hover a diagram for zoom and full screen; <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + mouse wheel zooms.</li>
+  <li><strong>Refresh</strong> reloads the diagrams and the description. Changes made by other people appear on their own; your own edits to the description need a refresh.</li>
+  <li>With the <strong>Auto</strong> theme, diagrams follow Jira's light or dark mode.</li>
+</ul>
+
+<h2 id="description">Diagrams from the description</h2>
+<p>Answers from ChatGPT, Claude and other assistants often contain Mermaid code blocks. Paste them into the work item description: the panel draws every code block marked <code>mermaid</code>, and code blocks without a language that start like a Mermaid diagram, under <strong>From the description</strong>. Your description is not changed.</p>
+<p><strong>Edit a copy</strong> opens one of these diagrams in the editor and saves it as a panel diagram you can change.</p>
+
+<h2 id="editor">Editor and AI assistant <span class="badge">AI</span></h2>
+<p>The editor is the same as in Confluence: code with a live preview, errors highlighted on their line, templates and themes. The AI bar can generate a diagram from a description, apply a change, fix a syntax error or explain the diagram, in any language. See the <a href="../mermaid/index.html#editor">editor</a> and <a href="../mermaid/index.html#ai">AI assistant</a> documentation.</p>
+<p>Each Jira site has its own monthly number of AI requests, shown next to the AI bar: 20 on the free tier, 50 during a trial, 200 with a paid subscription. The counter resets on the 1st of each month (UTC).</p>
+
+<h2 id="permissions">Who can do what</h2>
+<ul>
+  <li>Anyone who can see the work item can see its diagrams.</li>
+  <li>Adding, changing and deleting diagrams needs the <strong>Edit work items</strong> permission. The app acts as the signed-in user, so Jira checks this itself.</li>
+  <li>If the subscription is not active, diagrams stay visible but cannot be changed.</li>
+</ul>
+
+<h2 id="limits">Limits</h2>
+<ul>
+  <li>Up to 20 diagrams per work item, and 32 KB of diagram code per work item in total (a Jira limit; a typical diagram is well under 1 KB).</li>
+  <li>The same Mermaid and AI limits as in Confluence: see <a href="../mermaid/index.html#limits">limits</a>.</li>
+</ul>
+
+<h2 id="data">Where your data goes</h2>
+<ul>
+  <li>The app runs on Atlassian's infrastructure and has no connection to any other server.</li>
+  <li>Diagrams are stored on the work item itself, in a work item property named <code>mermaid-studio</code>. They are deleted with the work item.</li>
+  <li>The description is read in your browser to find Mermaid code; it is not stored.</li>
+  <li>AI requests go to Atlassian-hosted models and are not stored by the app.</li>
+  <li>Details: <a href="../privacy.html">privacy policy</a> and <a href="../security.html">security</a>.</li>
+</ul>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3>"You need permission to edit this work item"</h3>
+<p>Your Jira role does not allow editing this work item. Ask a project administrator for the Edit work items permission.</p>
+<h3>A code block in the description is not drawn</h3>
+<p>Mark the code block's language as <code>mermaid</code>, then click <strong>Refresh</strong>. Code blocks without a language are only drawn when they start with a diagram type, such as <code>flowchart</code> or <code>sequenceDiagram</code>, and have no errors.</p>
+<h3>"Diagram error on line N"</h3>
+<p>Open the diagram in the editor: the line is highlighted and <strong>Fix with AI</strong> can repair it.</p>
+<h3>Something else</h3>
+<p>Contact us through the <a href="https://felixb-support.atlassian.net/servicedesk/customer/portal/3">help center</a>; include your site address, the work item key and, if possible, the diagram code and a screenshot.</p>
+
+</main>
+<footer class="site"><div class="wrap">
+<span>© 2026 Félix Boittin</span>
+<nav aria-label="Legal"><a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a> · <a href="../security.html">Security</a> · <a href="../legal.html">Legal notice</a> · <a href="https://felixb-support.atlassian.net/servicedesk/customer/portal/3">Contact support</a></nav>
+</div></footer>
+</body>
+</html>
