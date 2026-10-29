@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Security · Félix Boittin</title>
-<meta name="description" content="Security: Mermaid Diagrams with AI for Confluence Cloud.">
+<meta name="description" content="Security: Mermaid Studio for Confluence Cloud.">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -18,7 +18,7 @@
 
 <h2>Architecture</h2>
 <ul>
-  <li><strong>Runs on Atlassian.</strong> Mermaid Diagrams with AI is an Atlassian Forge app. Its code runs on Atlassian's infrastructure and it does not connect to any server outside Atlassian. It has no egress permissions, which Atlassian verifies for the "Runs on Atlassian" programme.</li>
+  <li><strong>Runs on Atlassian.</strong> Mermaid Studio is an Atlassian Forge app. Its code runs on Atlassian's infrastructure and it does not connect to any server outside Atlassian. It has no egress permissions, which Atlassian verifies for the "Runs on Atlassian" programme.</li>
   <li><strong>Rendering in the browser.</strong> Diagrams are drawn in the reader's browser inside Atlassian's sandboxed app frame, with Mermaid's strict security level, which removes scripts, click handlers and HTML from diagram labels.</li>
   <li><strong>Least privilege.</strong> The app only asks for the permissions it uses: reading and updating pages (to convert code blocks when a user asks), reading and writing attachments (to store export images), and app storage (to count AI requests). Calls to Confluence are made as the current user, so the app can never see or change content the user cannot.</li>
   <li><strong>AI through Atlassian.</strong> AI features use Forge LLMs: models hosted by Atlassian, subject to Atlassian's content moderation. Prompts are not sent to any third party by us and are not stored by the app.</li>
