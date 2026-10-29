@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security · Félix Boittin</title>
+<meta name="description" content="Security: Mermaid Diagrams with AI for Confluence Cloud.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="index.html">Félix Boittin · Atlassian apps</a>
+<nav aria-label="Main"><a href="mermaid/index.html">Documentation</a> · <a href="support.html">Support</a> · <a href="security.html">Security</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Security</h1>
+<p class="updated">Last updated: 29 October 2026</p>
+
+<h2>Architecture</h2>
+<ul>
+  <li><strong>Runs on Atlassian.</strong> Mermaid Diagrams with AI is an Atlassian Forge app. Its code runs on Atlassian's infrastructure and it does not connect to any server outside Atlassian. It has no egress permissions, which Atlassian verifies for the "Runs on Atlassian" programme.</li>
+  <li><strong>Rendering in the browser.</strong> Diagrams are drawn in the reader's browser inside Atlassian's sandboxed app frame, with Mermaid's strict security level, which removes scripts, click handlers and HTML from diagram labels.</li>
+  <li><strong>Least privilege.</strong> The app only asks for the permissions it uses: reading and updating pages (to convert code blocks when a user asks), reading and writing attachments (to store export images), and app storage (to count AI requests). Calls to Confluence are made as the current user, so the app can never see or change content the user cannot.</li>
+  <li><strong>AI through Atlassian.</strong> AI features use Forge LLMs: models hosted by Atlassian, subject to Atlassian's content moderation. Prompts are not sent to any third party by us and are not stored by the app.</li>
+  <li><strong>No secrets or credentials</strong> are stored by the app.</li>
+  <li><strong>Dependencies</strong> are pinned, checked with <code>npm audit</code> before each release, and updated when advisories are published.</li>
+</ul>
+
+<h2>Reporting a vulnerability</h2>
+<p>Please report suspected vulnerabilities privately through our help center: <a href="https://felixb-support.atlassian.net/servicedesk/customer/portal/1">https://felixb-support.atlassian.net/servicedesk/customer/portal/1</a>. Choose <em>Problem</em> and start the summary with <code>[Security]</code>. Do not include exploit details in public places. We acknowledge security reports within 24 hours.</p>
+<p>The app also takes part in Atlassian's Marketplace security programme; reports made through Atlassian reach us as well.</p>
+
+<h2>Fix timeframes</h2>
+<p>We follow the <a href="https://developer.atlassian.com/platform/marketplace/security-bugfix-policy/">Atlassian Marketplace security bug fix policy</a> for cloud apps, counted from when a vulnerability is reported or triaged:</p>
+<table>
+  <tr><th>Severity (CVSS)</th><th>Fixed within</th></tr>
+  <tr><td>Critical (9.0 and above)</td><td>10 days</td></tr>
+  <tr><td>High (7.0 to 8.9)</td><td>4 weeks</td></tr>
+  <tr><td>Medium (4.0 to 6.9)</td><td>12 weeks</td></tr>
+  <tr><td>Low (below 4.0)</td><td>25 weeks</td></tr>
+</table>
+
+<h2>Incidents</h2>
+<p>If a security incident affects customer data, we inform affected customers and Atlassian without undue delay, and in any case within 72 hours of becoming aware of it, with what happened, what data is concerned and what we are doing about it.</p>
+
+</main>
+<footer class="site"><div class="wrap">
+<span>© 2026 Félix Boittin</span>
+<nav aria-label="Legal"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="security.html">Security</a> · <a href="legal.html">Legal notice</a> · <a href="https://felixb-support.atlassian.net/servicedesk/customer/portal/1">Contact support</a></nav>
+</div></footer>
+</body>
+</html>

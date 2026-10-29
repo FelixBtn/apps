@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mermaid Diagrams with AI — documentation · Félix Boittin</title>
+<meta name="description" content="Mermaid Diagrams with AI — documentation: Mermaid Diagrams with AI for Confluence Cloud.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">Félix Boittin · Atlassian apps</a>
+<nav aria-label="Main"><a href="../mermaid/index.html">Documentation</a> · <a href="../support.html">Support</a> · <a href="../security.html">Security</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Mermaid Diagrams with AI</h1>
+<p class="lead">Mermaid diagrams for Confluence Cloud, with an AI assistant, clean exports and a converter for diagrams pasted from ChatGPT or Claude.</p>
+
+<ul class="toc">
+  <li><a href="#start">Get started</a></li>
+  <li><a href="#editor">The diagram editor</a></li>
+  <li><a href="#ai">AI assistant</a></li>
+  <li><a href="#convert">Convert pasted code blocks</a></li>
+  <li><a href="#view">Zoom, pan and full screen</a></li>
+  <li><a href="#export">PDF and Word export</a></li>
+  <li><a href="#themes">Themes and dark mode</a></li>
+  <li><a href="#types">Supported diagrams</a></li>
+  <li><a href="#limits">Limits</a></li>
+  <li><a href="#data">Where your data goes</a></li>
+  <li><a href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+
+<h2 id="start">Get started</h2>
+<ol>
+  <li>A Confluence administrator installs the app from the Atlassian Marketplace.</li>
+  <li>Edit a page, type <kbd>/mermaid</kbd> and choose <strong>Mermaid diagram</strong>.</li>
+  <li>The editor opens with a starter diagram. Change the code, or describe what you need to the AI assistant, then click <strong>Save</strong> and publish the page.</li>
+</ol>
+<p>To change a diagram later, edit the page, select the diagram and click the edit (pencil) button.</p>
+
+<h2 id="editor">The diagram editor</h2>
+<ul>
+  <li><strong>Code on the left, live preview on the right.</strong> The preview updates as you type.</li>
+  <li><strong>Syntax errors</strong> appear under the code with the line number, and the line is highlighted.</li>
+  <li><strong>Insert template</strong> offers starters: flowchart, sequence, class, state, entity relationship, Gantt, mind map, timeline, pie chart and git graph. <strong>Undo</strong> brings back your previous code.</li>
+  <li><strong>Theme</strong>: see <a href="#themes">themes</a>.</li>
+  <li>Keyboard: <kbd>Tab</kbd> indents, <kbd>Esc</kbd> then <kbd>Tab</kbd> leaves the code area, <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>S</kbd> saves.</li>
+  <li><strong>Syntax help</strong> opens the <a href="https://mermaid.js.org/intro/syntax-reference.html">Mermaid syntax reference</a>.</li>
+</ul>
+
+<h2 id="ai">AI assistant <span class="badge">AI</span></h2>
+<p>The purple AI bar at the top of the editor works in any language.</p>
+<ul>
+  <li><strong>Generate</strong>: describe a diagram, for example <em>"expense approval: the employee submits, the manager approves amounts over €500, finance pays"</em>, and the AI writes the Mermaid code. Labels follow the language you write in.</li>
+  <li><strong>Apply</strong>: when the editor already contains your own diagram, describe a change, for example <em>"add a QA step before Deploy"</em>, and the AI updates the code.</li>
+  <li><strong>Fix with AI</strong> appears on syntax errors and repairs the code with the smallest possible change.</li>
+  <li><strong>Explain</strong> describes the diagram in plain language, in your Confluence language.</li>
+</ul>
+<p>Always check what the AI produces before saving. <strong>Undo</strong> restores your previous code.</p>
+<p>Each Confluence site has a monthly number of AI requests, shown next to the AI bar. The counter resets on the 1st of each month (UTC).</p>
+<table>
+  <tr><th>Site</th><th>AI requests per month</th></tr>
+  <tr><td>Free tier</td><td>20</td></tr>
+  <tr><td>Trial</td><td>50</td></tr>
+  <tr><td>Paid subscription</td><td>200</td></tr>
+</table>
+<p>AI requests are processed by models hosted by Atlassian (Forge LLMs). Nothing leaves Atlassian; see <a href="#data">where your data goes</a>.</p>
+
+<h2 id="convert">Convert pasted code blocks</h2>
+<p>When you paste an answer from ChatGPT, Claude or another assistant, Confluence keeps Mermaid diagrams as code blocks. To turn them into diagrams:</p>
+<ol>
+  <li>Open the page (not in edit mode) and click <strong>•••</strong> in the top right.</li>
+  <li>Choose <strong>Render Mermaid code blocks</strong>.</li>
+  <li>The app lists the Mermaid code blocks on the page and checks that each one is valid. Blocks with errors are not selected. With <em>Also detect Mermaid in code blocks without a language</em>, code blocks without a language that start like a diagram are included too.</li>
+  <li>Click <strong>Convert</strong>, then <strong>Reload page</strong>.</li>
+</ol>
+<p>The conversion saves a new version of the page, so you can restore the previous version from the page history.</p>
+
+<h2 id="view">Zoom, pan and full screen</h2>
+<ul>
+  <li>Hover a diagram to show its toolbar: zoom out, zoom level (click to fit), zoom in, full screen.</li>
+  <li><kbd>Ctrl</kbd>/<kbd>⌘</kbd> + mouse wheel zooms; when zoomed, drag to move around; double-click to reset.</li>
+  <li>With the diagram focused, <kbd>+</kbd>, <kbd>−</kbd> and <kbd>0</kbd> zoom in, zoom out and reset.</li>
+  <li>Full screen opens the diagram as large as your screen allows; there, the mouse wheel zooms directly.</li>
+</ul>
+
+<h2 id="export">PDF and Word export</h2>
+<p>When you save a diagram, the app also stores an image of it (PNG) as an attachment of the page, named <code>mermaid-diagram-….png</code>. Confluence uses this image when the page is exported to PDF or Word, so exports show the diagram, not its code. Please keep these attachments.</p>
+<p>If a diagram was changed without the editor (for example through the API), open it in the editor and save it again to refresh its image. Until then, PDF exports draw the live diagram and Word exports show its code.</p>
+
+<h2 id="themes">Themes and dark mode</h2>
+<p>With the <strong>Auto</strong> theme (the default), diagrams follow Confluence's light or dark mode. You can also pick a fixed Mermaid theme: Default, Neutral, Forest, Dark or Base. Exports always use a light theme so diagrams print well.</p>
+
+<h2 id="types">Supported diagrams</h2>
+<p>The app uses Mermaid 12 and supports all its diagram types, including flowchart, sequence, class, state, entity relationship, user journey, Gantt, pie, quadrant, requirement, git graph, C4, mind map, timeline, Sankey, XY chart, block, packet, kanban, architecture, radar, treemap and Venn diagrams. See the <a href="https://mermaid.js.org/intro/">Mermaid documentation</a> for the syntax.</p>
+
+<h2 id="limits">Limits</h2>
+<ul>
+  <li>Diagrams up to 200,000 characters and 2,000 edges.</li>
+  <li>AI: descriptions up to 2,000 characters and diagrams up to 20,000 characters, within the monthly requests of your site.</li>
+  <li>Links, click handlers and HTML inside diagram labels are disabled for security.</li>
+</ul>
+
+<h2 id="data">Where your data goes</h2>
+<ul>
+  <li>The app runs on Atlassian's infrastructure and has no connection to any other server.</li>
+  <li>Diagram code is stored in your Confluence page; export images are page attachments.</li>
+  <li>AI requests go to Atlassian-hosted models and are not stored by the app.</li>
+  <li>Details: <a href="../privacy.html">privacy policy</a> and <a href="../security.html">security</a>.</li>
+</ul>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3>"Diagram error on line N"</h3>
+<p>The Mermaid code has a syntax error on that line. Open the editor: the line is highlighted and <strong>Fix with AI</strong> can repair it. Common causes: a label with parentheses or quotes that needs double quotes, such as <code>A["Review (legal)"]</code>, or a node called <code>end</code>.</p>
+<h3>The export shows code instead of the diagram</h3>
+<p>Open the diagram in the editor and click <strong>Save</strong> to store a fresh image, then publish the page and export again.</p>
+<h3>"This site has used its AI requests for this month"</h3>
+<p>The monthly AI limit of your site is reached. It resets on the 1st. The editor and all other features keep working.</p>
+<h3>Something else</h3>
+<p>Contact us through the <a href="https://felixb-support.atlassian.net/servicedesk/customer/portal/1">help center</a>; include your site address and, if possible, the diagram code and a screenshot.</p>
+
+</main>
+<footer class="site"><div class="wrap">
+<span>© 2026 Félix Boittin</span>
+<nav aria-label="Legal"><a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a> · <a href="../security.html">Security</a> · <a href="../legal.html">Legal notice</a> · <a href="https://felixb-support.atlassian.net/servicedesk/customer/portal/1">Contact support</a></nav>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,54 @@
+:root {
+  --bg: #ffffff;
+  --text: #172b4d;
+  --muted: #44546f;
+  --border: #dfe1e6;
+  --surface: #f7f8f9;
+  --link: #0c66e4;
+  --accent: #6e5dc6;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1d2125;
+    --text: #dee4ea;
+    --muted: #9fadbc;
+    --border: #38414a;
+    --surface: #22272b;
+    --link: #579dff;
+    --accent: #9f8fef;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+a { color: var(--link); }
+header.site, footer.site { border-color: var(--border); border-style: solid; border-width: 0; }
+header.site { border-bottom-width: 1px; }
+footer.site { border-top-width: 1px; margin-top: 64px; color: var(--muted); font-size: 14px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+header.site .wrap, footer.site .wrap { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; padding-top: 14px; padding-bottom: 14px; }
+header.site .brand { font-weight: 700; color: var(--text); text-decoration: none; margin-right: auto; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a:hover { color: var(--link); }
+h1 { font-size: 32px; line-height: 1.25; margin: 40px 0 8px; }
+h2 { font-size: 22px; margin: 40px 0 8px; padding-top: 8px; }
+h3 { font-size: 17px; margin: 24px 0 4px; }
+.lead { color: var(--muted); font-size: 18px; margin-top: 0; }
+.updated { color: var(--muted); font-size: 14px; }
+code, kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9em; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 0 4px; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 12px; overflow-x: auto; }
+pre code { border: 0; padding: 0; background: none; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; margin: 12px 0; display: block; overflow-x: auto; }
+th, td { border: 1px solid var(--border); padding: 6px 10px; text-align: left; vertical-align: top; }
+th { background: var(--surface); }
+.card { border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; margin: 16px 0; background: var(--surface); }
+.card h2 { margin-top: 0; padding-top: 0; }
+.badge { display: inline-block; font-size: 12px; font-weight: 700; color: #fff; background: var(--accent); border-radius: 4px; padding: 1px 6px; vertical-align: middle; }
+.toc { columns: 2; padding-left: 20px; }
+@media (max-width: 600px) { .toc { columns: 1; } h1 { font-size: 26px; } }
