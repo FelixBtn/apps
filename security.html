@@ -10,7 +10,7 @@
 <body>
 <header class="site"><div class="wrap">
 <a class="brand" href="index.html">Félix Boittin · Atlassian apps</a>
-<nav aria-label="Main"><a href="mermaid/index.html">Confluence docs</a> · <a href="mermaid-jira/index.html">Jira docs</a> · <a href="support.html">Support</a> · <a href="security.html">Security</a></nav>
+<nav aria-label="Main"><a href="mermaid/index.html">Confluence docs</a> · <a href="mermaid-jira/index.html">Jira docs</a> · <a href="plantuml/index.html">PlantUML docs</a> · <a href="support.html">Support</a> · <a href="security.html">Security</a></nav>
 </div></header>
 <main class="wrap">
 <h1>Security</h1>
@@ -20,7 +20,7 @@
 <ul>
   <li><strong>Runs on Atlassian.</strong> Mermaid Studio is an Atlassian Forge app. Its code runs on Atlassian's infrastructure and it does not connect to any server outside Atlassian. It has no egress permissions, which Atlassian verifies for the "Runs on Atlassian" programme.</li>
   <li><strong>Rendering in the browser.</strong> Diagrams are drawn in the reader's browser inside Atlassian's sandboxed app frame, with Mermaid's strict security level, which removes scripts, click handlers and HTML from diagram labels.</li>
-  <li><strong>Least privilege.</strong> Each app asks only for the permissions it uses. The Confluence app reads and updates pages (to convert code blocks when a user asks), reads and writes attachments (to store export images) and uses app storage (to count AI requests). The Jira app reads work items and writes its own work item property (<code>read:jira-work</code>, <code>write:jira-work</code>), and uses app storage for the same AI counters. Calls to Confluence and Jira are made as the current user, so the apps can never see or change content the user cannot.</li>
+  <li><strong>Least privilege.</strong> Each app asks only for the permissions it uses. The Confluence apps (Mermaid Studio and PlantUML Studio) read and update pages (to convert code blocks when a user asks), reads and writes attachments (to store export images) and uses app storage (to count AI requests). The Jira app reads work items and writes its own work item property (<code>read:jira-work</code>, <code>write:jira-work</code>), and uses app storage for the same AI counters. Calls to Confluence and Jira are made as the current user, so the apps can never see or change content the user cannot.</li>
   <li><strong>AI through Atlassian.</strong> AI features use Forge LLMs: models hosted by Atlassian, subject to Atlassian's content moderation. Prompts are not sent to any third party by us and are not stored by the app.</li>
   <li><strong>No secrets or credentials</strong> are stored by the app.</li>
   <li><strong>Dependencies</strong> are pinned, checked with <code>npm audit</code> before each release, and updated when advisories are published.</li>

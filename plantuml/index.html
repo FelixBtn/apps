@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PlantUML Studio — documentation · Félix Boittin</title>
+<meta name="description" content="PlantUML Studio — documentation: Mermaid Studio for Confluence and Jira Cloud.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">Félix Boittin · Atlassian apps</a>
+<nav aria-label="Main"><a href="../mermaid/index.html">Confluence docs</a> · <a href="../mermaid-jira/index.html">Jira docs</a> · <a href="../plantuml/index.html">PlantUML docs</a> · <a href="../support.html">Support</a> · <a href="../security.html">Security</a></nav>
+</div></header>
+<main class="wrap">
+<h1>PlantUML Studio</h1>
+<p class="lead">PlantUML diagrams for Confluence Cloud, with an AI assistant, clean exports and a converter for diagrams pasted from ChatGPT or Claude. It shares its editor with Mermaid Studio.</p>
+
+<ul class="toc">
+  <li><a href="#start">Get started</a></li>
+  <li><a href="#editor">Editor and AI assistant</a></li>
+  <li><a href="#c4">C4 architecture diagrams</a></li>
+  <li><a href="#convert">Convert pasted code blocks</a></li>
+  <li><a href="#export">PDF and Word export</a></li>
+  <li><a href="#supported">What is supported</a></li>
+  <li><a href="#data">Where your data goes</a></li>
+  <li><a href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+
+<h2 id="start">Get started</h2>
+<ol>
+  <li>A Confluence administrator installs the app from the Atlassian Marketplace.</li>
+  <li>Edit a page, type <kbd>/plantuml</kbd> and choose <strong>PlantUML diagram</strong>.</li>
+  <li>The editor opens with a starter diagram. Change the code, or describe what you need to the AI assistant, then click <strong>Save</strong> and publish the page.</li>
+</ol>
+<p>Code without a <code>@startuml</code> line is accepted: the app adds <code>@startuml</code> and <code>@enduml</code> for you.</p>
+
+<h2 id="editor">Editor and AI assistant <span class="badge">AI</span></h2>
+<p>The editor works like the one in Mermaid Studio: code with a live preview, syntax errors highlighted on their line, templates and themes. See the <a href="../mermaid/index.html#editor">editor</a> and <a href="../mermaid/index.html#ai">AI assistant</a> documentation.</p>
+<ul>
+  <li><strong>Templates</strong>: sequence, use case, class, activity, component, state, entity relationship, C4 container, mind map and Gantt.</li>
+  <li><strong>Themes</strong>: <strong>Auto</strong> follows Confluence's light or dark mode; you can also pick Default or Dark. Exports always use the light theme.</li>
+  <li><strong>AI</strong>: describe a system or a process in any language, for example <em>"booking app: website, API, database, external payment service"</em>, and the AI writes the PlantUML. It can also apply a change, fix a syntax error or explain the diagram. Each site has a monthly number of AI requests, shown next to the AI bar: 20 on the free tier, 50 during a trial, 200 with a paid subscription.</li>
+</ul>
+
+<h2 id="c4">C4 architecture diagrams</h2>
+<p>The C4-PlantUML library is included. Start your diagram with <code>!include &lt;C4/C4_Context&gt;</code>, <code>&lt;C4/C4_Container&gt;</code> or <code>&lt;C4/C4_Component&gt;</code>, or insert the <strong>C4 container</strong> template. Other <code>!include &lt;…&gt;</code> libraries (for example AWS or Kubernetes icons) and includes from URLs are not available, because the app does not connect to anything outside Atlassian.</p>
+
+<h2 id="convert">Convert pasted code blocks</h2>
+<ol>
+  <li>Open the page (not in edit mode) and click <strong>•••</strong> in the top right.</li>
+  <li>Choose <strong>Render PlantUML code blocks</strong>.</li>
+  <li>The app lists code blocks marked <code>plantuml</code> or <code>puml</code>, and, if you keep the option on, code blocks without a language that start with <code>@startuml</code> or another <code>@start</code> line. Each block is checked; blocks with errors are not selected.</li>
+  <li>Click <strong>Convert</strong>, then <strong>Reload page</strong>. A new page version is created, so you can restore the previous one from the page history.</li>
+</ol>
+
+<h2 id="export">PDF and Word export</h2>
+<p>When you save a diagram, the app stores an image of it (<code>plantuml-diagram-….png</code>) as a page attachment. Confluence uses it in PDF and Word exports, so exports show the diagram, not its code. Please keep these attachments. If a diagram was changed outside the editor, open it in the editor and save it again.</p>
+
+<h2 id="supported">What is supported</h2>
+<p>The app uses the official PlantUML engine (version 1.2026.8), compiled to JavaScript, so diagrams are drawn in your browser. Supported: sequence, use case, class, object, activity, component, deployment, state, timing, entity relationship, C4, mind map, WBS, Gantt, JSON and YAML diagrams, and more. Graph layouts use PlantUML's built-in layout engine instead of Graphviz, so complex layouts can differ slightly from PlantUML's website. Links in diagrams are not clickable.</p>
+
+<h2 id="data">Where your data goes</h2>
+<ul>
+  <li>The app runs on Atlassian's infrastructure and has no connection to any other server. Diagrams are drawn in your browser.</li>
+  <li>Diagram code is stored in your Confluence page; export images are page attachments.</li>
+  <li>AI requests go to Atlassian-hosted models and are not stored by the app.</li>
+  <li>Details: <a href="../privacy.html">privacy policy</a> and <a href="../security.html">security</a>.</li>
+</ul>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3>"Diagram error on line N" / "Syntax Error?"</h3>
+<p>PlantUML could not read that line. Open the editor: the line is highlighted and <strong>Fix with AI</strong> can repair it. PlantUML guesses the diagram type from the first lines, so a typo there can make it read the whole diagram as the wrong type.</p>
+<h3>"Cannot include" or an include error</h3>
+<p>Only the C4 library is available. Remove other <code>!include</code> lines, or copy the definitions you need into the diagram.</p>
+<h3>Something else</h3>
+<p>Contact us through the <a href="https://felixb-support.atlassian.net/servicedesk/customer/portal/3">help center</a>; include your site address and, if possible, the diagram code and a screenshot.</p>
+
+</main>
+<footer class="site"><div class="wrap">
+<span>© 2026 Félix Boittin</span>
+<nav aria-label="Legal"><a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a> · <a href="../security.html">Security</a> · <a href="../legal.html">Legal notice</a> · <a href="https://felixb-support.atlassian.net/servicedesk/customer/portal/3">Contact support</a></nav>
+</div></footer>
+</body>
+</html>
